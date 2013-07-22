@@ -1,0 +1,19 @@
+<div>
+  <%= form_for @comment, html: { multipart: true } do |f| %>
+    Comment:
+    <%= f.text_field :text %>
+    Attach file:
+    <%= f.file_field :attachment %>
+    <%= f.submit "New Comment" %>
+  <% end %>
+</div>
+<div>
+  <% @comments.each do |c| %>
+    <p><%= link_to "X", c, method: :delete %>
+      <%= c.text %>
+      <% if c.attachment.exists? %>
+        <%= link_to 'attachment', c.attachment.url %>
+      <% end %>
+    </p>
+  <% end %>
+</div>
