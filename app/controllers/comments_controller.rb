@@ -1,6 +1,7 @@
 class CommentsController < ApplicationController
   def create
     @comment = Comment.new(params[:comment])
+    @comment.user_name = cookies[:name]
     @comment.save
     redirect_to comments_url
   end

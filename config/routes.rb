@@ -1,6 +1,7 @@
 Imagine::Application.routes.draw do
   root 'hello#index'
-  
+
+  post 'signin' => 'user#signin'
   resources :comments
   
   # The priority is based upon order of creation: first created -> highest priority.

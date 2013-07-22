@@ -1,2 +1,8 @@
-<h1>Hello world!</h1>
-[your app said enthusiastically]
+<h1>Chat app</h1>
+
+<%= form_tag '/signin' do %>
+  <p>
+    Name: <%= text_field_tag "name", "" %>
+    <%= submit_tag "Go" %>
+  </p>
+<% end %>

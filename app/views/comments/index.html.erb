@@ -2,7 +2,7 @@
   <%= form_for @comment, html: { multipart: true } do |f| %>
     Comment:
     <%= f.text_field :text %>
-    Attach file:
+    Attach image:
     <%= f.file_field :attachment %>
     <%= f.submit "New Comment" %>
   <% end %>
@@ -10,9 +10,9 @@
 <div>
   <% @comments.each do |c| %>
     <p><%= link_to "X", c, method: :delete %>
-      <%= c.text %>
+      <%= c.user_name %>: <%= c.text %>
       <% if c.attachment.exists? %>
-        <%= link_to 'attachment', c.attachment.url %>
+        <%= link_to image_tag(c.attachment.url(:thumb)), c.attachment.url %>
       <% end %>
     </p>
   <% end %>

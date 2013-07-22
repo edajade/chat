@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130722041704) do
+ActiveRecord::Schema.define(version: 20130722105859) do
 
   create_table "comments", force: true do |t|
     t.text     "text"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20130722041704) do
     t.string   "attachment_content_type"
     t.integer  "attachment_file_size"
     t.datetime "attachment_updated_at"
+    t.string   "user_name"
   end
 
 end
