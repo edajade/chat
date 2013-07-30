@@ -37,7 +37,7 @@ GEM
       tzinfo (~> 0.3.37)
     arel (4.0.0)
     atomic (1.1.10)
-    bootstrap-sass (2.3.2.0)
+    bootstrap-sass (2.2.2.0)
       sass (~> 3.2)
     builder (3.1.4)
     climate_control (0.0.3)
@@ -54,6 +54,10 @@ GEM
     erubis (2.7.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
+    flatui-rails (0.0.4)
+      bootstrap-sass (= 2.2.2)
+      railties (>= 3.1)
+      sass-rails (>= 3.2.0)
     hike (1.2.3)
     i18n (0.6.4)
     jbuilder (1.4.2)
@@ -127,8 +131,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bootstrap-sass (= 2.3.2.0)
   coffee-rails (~> 4.0.0)
+  flatui-rails
   jbuilder (~> 1.2)
   jquery-rails
   paperclip!
