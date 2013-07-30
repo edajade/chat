@@ -1,6 +1,6 @@
 <%= form_tag '/signin', class: 'form-horizontal' do %>
   <p>
-    Name: <%= text_field_tag "name", "" %>
+    Name: <%= text_field_tag "name", "", placeholder:"Name" %>
     <%= submit_tag "Go", class: 'btn' %>
   </p>
 <% end %>

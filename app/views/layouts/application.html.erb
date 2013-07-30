@@ -12,27 +12,31 @@
 </head>
 <body>
 
-<div class="navbar navbar-top">
-  <div class="navbar-inner">
-    <div class="container">
-      <div class="brand">Cool Chat</div>
-      <div class="nav-collapse">
-        <ul class="nav">
-          <li><%= link_to "Profile", "#" %></li>
-          <li><%= link_to "Sign out", "#" %></li>
-        </ul>
+<div class="container-fluid">
+  <div class="navbar navbar-top">
+    <div class="navbar-inner">
+      <div class="container">
+        <div class="brand">Cool Chat</div>
+        <div class="nav-collapse">
+          <ul class="nav">
+            <li><%= link_to "Profile", "#" %></li>
+            <li><%= link_to "Sign out", "#" %></li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
-</div>
-<div class="container">
-  <% flash.each do |name, msg| %>
-    <div class="alert alert-<%= name == :notice ? "success" : "error" %>">
-      <a class="close" data-dismiss="alert">x</a>
-      <%= msg  %>
-    </div>
-  <% end %>
-  <%= yield %>
+  <div class="container-fluid">
+    <% flash.each do |name, msg| %>
+      <div class="alert alert-<%= name == :notice ? "success" : "error" %>">
+        <a class="close" data-dismiss="alert">x</a>
+        <%= msg  %>
+      </div>
+    <% end %>
+  </div>
+  <div class="container-fluid">
+    <%= yield %>
+  </div>
 </div>
 
 </body>
