@@ -2,13 +2,38 @@
 <html>
 <head>
   <title>BrilliantSite</title>
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+  <![endif]-->
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 
-<%= yield %>
+<div class="navbar navbar-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <div class="brand">Cool Chat</div>
+      <div class="nav-collapse">
+        <ul class="nav">
+          <li><%= link_to "Profile", "#" %></li>
+          <li><%= link_to "Sign out", "#" %></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <% flash.each do |name, msg| %>
+    <div class="alert alert-<%= name == :notice ? "success" : "error" %>">
+      <a class="close" data-dismiss="alert">x</a>
+      <%= msg  %>
+    </div>
+  <% end %>
+  <%= yield %>
+</div>
 
 </body>
 </html>

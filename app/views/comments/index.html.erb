@@ -1,15 +1,14 @@
 <div>
-  <%= form_for @comment, html: { multipart: true } do |f| %>
-    Comment:
+  <%= form_for @comment, html: { multipart: true, class: 'form-horizontal' } do |f| %>
     <%= f.text_field :text %>
+    <%= f.submit "Submit", class: 'btn' %>
     Attach image:
     <%= f.file_field :attachment %>
-    <%= f.submit "New Comment" %>
   <% end %>
 </div>
 <div>
   <% @comments.each do |c| %>
-    <p><%= link_to "X", c, method: :delete %>
+    <p><%= link_to "X", c, method: :delete, class: 'btn btn-mini btn-danger' %>
       <%= c.user_name %>: <%= c.text %>
       <% if c.attachment.exists? %>
         <%= link_to image_tag(c.attachment.url(:thumb)), c.attachment.url %>
