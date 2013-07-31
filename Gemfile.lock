@@ -132,6 +132,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bootstrap-sass (= 2.2.2)
   coffee-rails (~> 4.0.0)
   flatui-rails
   jbuilder (~> 1.2)
