@@ -1,8 +1,7 @@
 Imagine::Application.routes.draw do
   devise_for :users
-  root 'hello#index'
+  root 'comments#index'
 
-  post 'signin' => 'user#signin'
   resources :comments
   
   # The priority is based upon order of creation: first created -> highest priority.
