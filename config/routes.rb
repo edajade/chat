@@ -1,4 +1,5 @@
 Imagine::Application.routes.draw do
+  devise_for :users
   root 'hello#index'
 
   post 'signin' => 'user#signin'
